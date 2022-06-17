@@ -11,6 +11,7 @@ function Product({ data }) {
 
     setSizeOption(null);
     return handleAddToCart({
+      id: currentSizeOption,
       title: data.title,
       quantity: 1,
       price: data.price,
