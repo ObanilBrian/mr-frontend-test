@@ -1,0 +1,233 @@
+/** General **/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+.wrapper {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+
+.required {
+  color: #C90000;
+}
+
+/** Header **/
+header {
+  text-align: right;
+  background: #f6f6f7;
+}
+
+/** Cart **/
+.cart {
+  color: #888888;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.cart__icon {
+  width: 1rem;
+  vertical-align: middle;
+}
+
+.cart.active {
+  color: #222222;
+}
+
+.cart.active::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 1.5rem);
+  height: calc(100% + 0.5rem);
+  top: -0.25rem;
+  left: -0.75rem;
+  z-index: -1;
+  background-color: #FFF;
+  border: #cccccc 1px solid;
+  box-shadow: 0 0 2px 0px #CCCCCC
+}
+
+.cart.active::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 1.4rem);
+  height: 10px;
+  bottom: -10px;
+  left: -0.65rem;
+  background-color: #FFF;
+  z-index: 100;
+}
+
+.cart.active  .cart__icon {
+  fill: #222222;
+}
+
+/** Mini Cart **/
+.minicart {
+  position: absolute;
+  top: 92.5%;
+  right: -0.9rem;
+  background-color: #FFF;
+  border: #cccccc 1px solid;
+  box-shadow: 0 0 2px 0px #CCCCCC;
+  padding: 1rem;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.item {
+  padding: 0.5rem 0;
+  display: flex;
+  text-align: left;
+}
+
+.item__img {
+  width: 5rem;
+}
+
+.item__info {
+  padding-left: 1.5rem;
+  width: 15rem;
+  color: #222222;
+  font-weight: 400;
+}
+
+.item__info > div {
+  padding-bottom: 1rem;
+}
+
+.item__price {
+  font-weight: 600;
+} 
+
+/** Product **/
+.product__image {
+  width: 100%;
+}
+
+.product__name {
+  font-weight: 400;
+}
+
+.product__price {
+  font-weight: 600;
+}
+
+.product__description {
+  color: #888888;
+  line-height: 1.5rem;
+}
+
+.product__option {
+  color: #888888;
+}
+
+.product__option > label {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.product__value {
+  color: #222222;
+}
+
+.product__option button {
+  text-transform: uppercase;
+  background: #FFF;
+  color: #888888;
+  border: 2px solid #cccccc;
+  font-size: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0.25rem 1rem 0;
+  display: inline-block;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.product__option button:hover,
+.product__option button.active {
+  border-color: #222222;
+  color: #222222;
+}
+
+.product__submit {
+  text-transform: uppercase;
+  background: #FFF;
+  border: 2px solid #222222;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.product__submit:hover {
+  background: #222222;
+  color: #FFF;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    max-width: 992px;
+    margin: 2rem auto;
+    position: relative;
+  }
+
+  header {
+    background: #FFF;
+  }
+
+  header > .wrapper {
+    background: #f6f6f7;
+  }
+
+  header > .wrapper::before {
+    position: absolute;
+    background: #f6f6f7;
+    content: "";
+    width: 150%;
+    height: 100%;
+    top: 0;
+    left: -25%;
+    z-index: 1;
+  }
+
+  .cart.active::after {
+    width: calc(100% + 1.45rem);
+    bottom: -0.8rem;
+    left: -0.65rem;
+  }
+
+  .product > .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .product > .wrapper > div {
+    width: 60%;
+    padding-right: 6rem;
+  }
+
+  .product > .wrapper > form {
+    width: 40%;
+  }
+}
